@@ -336,6 +336,7 @@ Currently the client supports the following PostgreSQL types
 * TSQUERY (`java.lang.String`)
 * INET (`io.vertx.pgclient.data.Inet`)
 * MONEY (`io.vertx.pgclient.data.Money`)
+* CIDR (`io.vertx.pgclient.data.Cidr`)
 
 Tuple decoding uses the above types when storing values, it also performs on the flu conversion the actual value when possible:
 

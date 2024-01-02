@@ -22,18 +22,9 @@ import io.vertx.core.impl.logging.Logger;
 import io.vertx.core.impl.logging.LoggerFactory;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.pgclient.data.Box;
-import io.vertx.pgclient.data.Circle;
-import io.vertx.pgclient.data.Inet;
-import io.vertx.pgclient.data.Line;
-import io.vertx.pgclient.data.LineSegment;
-import io.vertx.pgclient.data.Money;
+import io.vertx.pgclient.data.*;
 import io.vertx.sqlclient.Tuple;
 import io.vertx.sqlclient.data.Numeric;
-import io.vertx.pgclient.data.Interval;
-import io.vertx.pgclient.data.Path;
-import io.vertx.pgclient.data.Point;
-import io.vertx.pgclient.data.Polygon;
 import io.vertx.core.buffer.Buffer;
 
 import java.sql.JDBCType;
@@ -97,7 +88,7 @@ public enum DataType {
   MACADDR(829, true, Object.class, JDBCType.OTHER),
   INET(869, true, Inet.class, JDBCType.OTHER),
   INET_ARRAY(1041, true, Inet[].class, JDBCType.OTHER),
-  CIDR(650, true, Object.class, JDBCType.OTHER),
+  CIDR(650, true, Cidr.class, JDBCType.OTHER),
   MACADDR8(774, true, Object[].class, JDBCType.OTHER),
   UUID(2950, true, UUID.class, JDBCType.OTHER, Tuple::getUUID),
   UUID_ARRAY(2951, true, UUID[].class, JDBCType.OTHER, Tuple::getArrayOfUUIDs),
