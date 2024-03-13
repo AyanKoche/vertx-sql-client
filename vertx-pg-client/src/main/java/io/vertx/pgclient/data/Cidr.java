@@ -11,12 +11,15 @@ public class Cidr {
   private InetAddress address;
   private Integer netmask;
 
-
   public InetAddress getAddress(){
     return address;
   }
-  public Cidr setAddress(InetAddress address){
-    this.address=address;
+  public Cidr setAddress(InetAddress address) {
+    if (address instanceof Inet4Address || address instanceof Inet6Address) {
+      this.address = address;
+    } else {
+      throw new IllegalArgumentException("Invalid IP address type");
+    }
     return this;
   }
 
